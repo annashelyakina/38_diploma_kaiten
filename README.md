@@ -65,7 +65,7 @@ gradle clean kaiten_tests
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> Сборка в Jenkins
 
-[Ссылка на сборку в Jenkins](https://jenkins.autotests.cloud/job/038-Anna_Shelyakina-Jenkins-arcadia-project/)
+[Ссылка на сборку в Jenkins](https://jenkins.autotests.cloud/job/038-Anna_Shelyakina-diploma_kaiten/)
 
 Для запуска сборки необходимо перейти в раздел <code>Собрать с параметрами</code>, выбрать значение для таких параметров как: ENVIRONMENT, COMMENT, TASK, BROWSER, BROWSER_VERSION, BROWSER_SIZE, REMOTE. Далее нажать кнопку <code>Собрать</code>.
 <p align="center">
