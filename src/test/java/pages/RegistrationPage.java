@@ -97,11 +97,8 @@ public class RegistrationPage {
 
     @Step("Нажатие пункта меню 'Контакты'")
     public RegistrationPage clickMenuItemContacts(){
-        // Локатор пункта меню внизу страницы
-        SelenideElement menuItem = $(byCssSelector("li.sm-none"));
-
         // Прокручиваем страницу до нужного элемента
-        menuItem.scrollTo();
+        $(byCssSelector("li.sm-none")).scrollTo();
 
         $(byText("Контакты")).click();
         return this;
