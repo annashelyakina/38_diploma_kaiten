@@ -1,8 +1,10 @@
 package pages;
 
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.byCssSelector;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -95,7 +97,13 @@ public class RegistrationPage {
 
     @Step("Нажатие пункта меню 'Контакты'")
     public RegistrationPage clickMenuItemContacts(){
-        $(("li.sm-none")).click();
+        // Локатор пункта меню внизу страницы
+        SelenideElement menuItem = $(byCssSelector("li.sm-none"));
+
+        // Прокручиваем страницу до нужного элемента
+        menuItem.scrollTo();
+
+        $(byText("Контакты")).click();
         return this;
     }
 
