@@ -92,4 +92,16 @@ public class RegistrationPage {
         $("h1.kw-s1--title").shouldHave(text("Соберите свой идеальный тариф и платите только за то, чем пользуетесь"));
         return this;
     }
+
+    @Step("Нажатие пункта меню 'Контакты'")
+    public RegistrationPage clickMenuItemContacts(){
+        $(("li.sm-none")).click();
+        return this;
+    }
+
+    @Step("Проверка, что текст 'Контакты' отображается на странице")
+    public RegistrationPage checkTextContactsOnPage(){
+        $("h1.kw-s1--title").shouldHave(text("Контакты"));
+        return this;
+    }
 }

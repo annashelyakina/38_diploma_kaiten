@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
 @Tag("kaiten_tests")
-public class MenuItems extends TestBase {
+public class HeaderMenuItems extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
