@@ -1,6 +1,5 @@
 package pages;
 
-import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
@@ -9,94 +8,94 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class RegistrationPage {
+public class MainPage {
 
     @Step("Открытие сайта в браузере")
-    public RegistrationPage openPage(){
+    public MainPage openPage(){
         open("");
         return this;
     }
 
     @Step("Нажатие кнопки 'Хорошо' на форме Cookie")
-    public RegistrationPage clickOkCookie(){
+    public MainPage clickOkCookie(){
         $("#kw-cookies-btn").click();
         return this;
     }
 
     @Step("Проверка, что форма Cookie не отображается")
-    public RegistrationPage checkHiddenCookie(){
+    public MainPage checkHiddenCookie(){
         $("aside.kw-cookies").shouldBe(hidden);
         return this;
     }
 
     @Step("Проверка, что логотип отображается на странице")
-    public RegistrationPage checkLogoOnPage(){
+    public MainPage checkLogoOnPage(){
         $("a.kw-logo").shouldBe(visible);
         return this;
     }
 
     @Step("Проверка, что слоган отображается на странице")
-    public RegistrationPage checkSloganOnPage(){
+    public MainPage checkSloganOnPage(){
         $(".kw-content").shouldHave(text("Российский сервис для управления рабочими процессами"));
         return this;
     }
 
     @Step("Проверка, что форма 'Оставить заявку' открыта")
-    public RegistrationPage clickLeaveRequestButton(){
+    public MainPage clickLeaveRequestButton(){
         $(".kw-menu--btn._phone").shouldBe(visible).click();
         return this;
     }
 
     @Step("Проверка, что текст отображается на форме для заявки")
-    public RegistrationPage checkTextOnLeaveRequestDialog(){
+    public MainPage checkTextOnLeaveRequestDialog(){
         $("div.kw-dialog-call--body").shouldHave(text("Оставить заявку"));
         return this;
     }
 
     @Step("Нажатие кнопки закрытия на форме для заявки")
-    public RegistrationPage closeLeaveRequestDialog(){
+    public MainPage closeLeaveRequestDialog(){
         $(".kw-dialog-call--close").click();
         return this;
     }
 
     @Step("Проверка, что форма для заявки закрыта")
-    public RegistrationPage checkHiddenLeaveRequestDialog(){
+    public MainPage checkHiddenLeaveRequestDialog(){
         $("div.kw-dialog-call--body").shouldBe(hidden);
         return this;
     }
 
     @Step("Раскрытие подменю для пункта меню 'Продукт'")
-    public RegistrationPage clickMenuItemProduct(){
+    public MainPage clickMenuItemProduct(){
     $("svg.kw-menu--arrow-svg").hover();
         return this;
     }
 
     @Step("Нажатие подпункта меню 'Задачи'")
-    public RegistrationPage clickSubMenuItemTasks(){
+    public MainPage clickSubMenuItemTasks(){
     $(byText("Задачи")).click();
         return this;
     }
 
     @Step("Проверка, что текст о задачах отображается на странице")
-    public RegistrationPage checkTextTasksOnPage(){
+    public MainPage checkTextTasksOnPage(){
     $("h1.kw-s1--title.wow.fadeInUp").shouldHave(text("Соберите всю информацию по задачам в карточках"));
         return this;
     }
 
     @Step("Нажатие пункта меню 'Тарифы'")
-    public RegistrationPage clickMenuItemTariff(){
+    public MainPage clickMenuItemTariff(){
         $(byText("Тарифы")).click();
         return this;
     }
 
     @Step("Проверка, что текст о тарифах отображается на странице")
-    public RegistrationPage checkTextTariffOnPage(){
+    public MainPage checkTextTariffOnPage(){
         $("h1.kw-s1--title").shouldHave(text("Соберите свой идеальный тариф и платите только за то, чем пользуетесь"));
         return this;
     }
 
     @Step("Нажатие пункта меню 'Контакты'")
-    public RegistrationPage clickMenuItemContacts(){
+    public MainPage clickMenuItemContacts(){
         // Прокручиваем страницу до нужного элемента
         $(byCssSelector("li.sm-none")).scrollTo();
 
@@ -105,7 +104,7 @@ public class RegistrationPage {
     }
 
     @Step("Проверка, что текст 'Контакты' отображается на странице")
-    public RegistrationPage checkTextContactsOnPage(){
+    public MainPage checkTextContactsOnPage(){
         $("h1.kw-s1--title").shouldHave(text("Контакты"));
         return this;
     }

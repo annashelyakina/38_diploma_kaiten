@@ -6,17 +6,16 @@ import org.junit.jupiter.api.Test;
 import pages.MainPage;
 
 @Tag("kaiten_tests")
-public class FooterMenuItems extends TestBase {
+public class Slogan extends TestBase {
 
     MainPage mainPage = new MainPage();
 
     @Test
-    @DisplayName("Открытие страницы с контактами")
-    void clickMenuItemContacts() {
+    @DisplayName("Поиск лозунга компании на главной странице")
+    void checkWelcomeTextOnPage() {
 
         mainPage.openPage()
-                .clickMenuItemContacts()
-                .checkTextContactsOnPage()
+                .checkSloganOnPage()
         ;
     }
 }

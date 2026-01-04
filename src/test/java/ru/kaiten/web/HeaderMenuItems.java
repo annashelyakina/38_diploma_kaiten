@@ -3,18 +3,18 @@ package ru.kaiten.web;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pages.RegistrationPage;
+import pages.MainPage;
 
 @Tag("kaiten_tests")
 public class HeaderMenuItems extends TestBase {
 
-    RegistrationPage registrationPage = new RegistrationPage();
+    MainPage mainPage = new MainPage();
 
     @Test
     @DisplayName("Открытие страницы с описанием как собрать информацию по задачам в карточках")
     void clickMenuItemProduct() {
 
-        registrationPage.openPage()
+        mainPage.openPage()
                 .clickMenuItemProduct()
                 .clickSubMenuItemTasks()
                 .checkTextTasksOnPage()
@@ -25,7 +25,7 @@ public class HeaderMenuItems extends TestBase {
     @DisplayName("Открытие страницы с тарифами")
     void clickMenuItemTariff() {
 
-        registrationPage.openPage()
+        mainPage.openPage()
                 .clickMenuItemTariff()
                 .checkTextTariffOnPage()
         ;
