@@ -66,11 +66,6 @@ gradle clean web_tests
 ```
 gradle clean api_tests
 ```
-### Запуск web тестов из терминала
-```
-gradle clean web_tests
-```
-При выполнении данной команды в терминале IDE тесты запустятся удалённо в <code>Selenoid</code>. 
 
 ### Запуск web и api тестов из терминала
 ```
