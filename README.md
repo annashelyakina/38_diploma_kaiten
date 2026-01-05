@@ -47,12 +47,17 @@
 * интеграция с - <code>Allure TestOps</code>;
 * регистрация задач и дефектов в <code>Jira</code>.
 
-#### Содержание Allure-отчёта:
+#### Содержание Allure-отчёта для web теста:
 * Шаги теста;
 * Скриншот страницы на последнем шаге;
 * Page Source;
 * Логи браузерной консоли;
 * Видео выполнения автотеста.
+
+#### Содержание Allure-отчёта для api теста:
+* Request api запроса;
+* Response api запроса;
+* Результат проверки response.
 
 ## <img width="4%" style="vertical-align:middle" title="Selenoid" src="media/logo/Selenoid.svg"> Запуск автотестов
 
