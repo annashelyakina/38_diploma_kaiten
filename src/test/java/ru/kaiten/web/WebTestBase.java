@@ -11,7 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
-public class TestBase {
+public class WebTestBase {
     @BeforeAll
     static void beforeAll() {
 

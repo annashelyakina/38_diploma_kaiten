@@ -1,12 +1,13 @@
-package ru.kaiten.web;
+package ru.kaiten.web.brand;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
+import ru.kaiten.web.WebTestBase;
 
-@Tag("kaiten_tests")
-public class Logo extends TestBase {
+@Tag("web_tests")
+public class Logo extends WebTestBase {
 
     MainPage mainPage = new MainPage();
 
