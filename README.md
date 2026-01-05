@@ -5,7 +5,7 @@
   [Kaiten](https://kaiten.ru/) — платформа для управления проектами и задачами, которая помогает командам работать быстрее и продуктивнее. 
 В отличие от зарубежных сервисов управления задачами и их российских аналогов, программа для управления проектами и задачами Kaiten способствует детальной визуализации всего рабочего процесса компании. Благодаря уникальной возможности расположить несколько канбан‑досок на одном рабочем пространстве, менеджеры могут одновременно управлять разными процессами и командами на одном экране.
 
-#### В данном проекте использованы UI-тесты, API-тесты и мобильные тесты на Android. 
+#### В данном проекте использованы Web-тесты и API-тесты. 
 
 ## :scroll: Содержание:
 
@@ -56,12 +56,26 @@
 
 ## <img width="4%" style="vertical-align:middle" title="Selenoid" src="media/logo/Selenoid.svg"> Запуск автотестов
 
-### Запуск тестов из терминала
+### Запуск web тестов из терминала
 ```
-gradle clean kaiten_tests
+gradle clean web_tests
 ```
 При выполнении данной команды в терминале IDE тесты запустятся удалённо в <code>Selenoid</code>. 
 
+### Запуск api тестов из терминала
+```
+gradle clean api_tests
+```
+### Запуск web тестов из терминала
+```
+gradle clean web_tests
+```
+При выполнении данной команды в терминале IDE тесты запустятся удалённо в <code>Selenoid</code>. 
+
+### Запуск web и api тестов из терминала
+```
+gradle clean test
+```
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> Сборка в Jenkins
 
@@ -76,7 +90,7 @@ gradle clean kaiten_tests
 ## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logo/Allure_Report.svg"> Пример Allure отчета
 ### Overview
 
-[Ссылка на Allure отчёт](https://jenkins.autotests.cloud/job/038-Anna_Shelyakina-Jenkins-arcadia-project/allure/)
+[Ссылка на Allure отчёт](https://jenkins.autotests.cloud/job/038-Anna_Shelyakina-diploma_kaiten/allure/)
 
 <p align="center">
 <img title="Allure Report" src="media/screens/Allure.png">
