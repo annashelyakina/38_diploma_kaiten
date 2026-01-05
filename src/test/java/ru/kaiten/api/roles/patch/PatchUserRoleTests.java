@@ -11,8 +11,8 @@ import ru.kaiten.api.lombok.PostUserRoleResponseLombokModel;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static ru.kaiten.specs.UserRoleSpec.responseSpec200;
-import static ru.kaiten.specs.UserRoleSpec.userRoleRequestSpec;
+import static ru.kaiten.api.specs.UserRoleSpec.responseSpec200;
+import static ru.kaiten.api.specs.UserRoleSpec.userRoleRequestSpec;
 
 @Tag("api_tests")
 public class PatchUserRoleTests extends ApiTestBase {

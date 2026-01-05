@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static ru.kaiten.specs.UserRoleSpec.*;
+import static ru.kaiten.api.specs.UserRoleSpec.*;
 
 @Tag("api_tests")
 public class PostUserRoleTests extends ApiTestBase {

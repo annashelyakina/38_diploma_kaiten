@@ -1,4 +1,4 @@
-package ru.kaiten.specs;
+package ru.kaiten.api.specs;
 
 import ru.kaiten.api.Constants;
 import io.restassured.builder.ResponseSpecBuilder;

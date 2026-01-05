@@ -10,7 +10,7 @@ import ru.kaiten.api.lombok.PostUserRoleResponseLombokModel;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static ru.kaiten.specs.UserRoleSpec.*;
+import static ru.kaiten.api.specs.UserRoleSpec.*;
 
 @Tag("api_tests")
 public class GetUserRoleTests extends ApiTestBase {
