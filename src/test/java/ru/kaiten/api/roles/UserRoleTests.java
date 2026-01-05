@@ -19,17 +19,17 @@ import static ru.kaiten.specs.UserRoleSpec.*;
 public class UserRoleTests extends ApiTestBase {
 
     @Test
-    @DisplayName("Проверка успешного создания роли пользователя")
-    public void createUserRoleTest() {
+    @DisplayName("Проверка успешного создания роли пользователя методом POST")
+    public void successfulCreateUserRoleTest() {
         PostUserRoleLombokModel userRole = new PostUserRoleLombokModel();
         userRole.setName(Constants.USER_ROLE);
 
         PostUserRoleResponseLombokModel response = step("Make request", ()->
         given(userRoleRequestSpec)
                 .body(userRole)
-        .when()
+                .when()
                 .post("/user-roles")
-        .then()
+                .then()
                 .spec(responseSpec200)
                 .extract().as(PostUserRoleResponseLombokModel.class));
 
@@ -49,10 +49,10 @@ public class UserRoleTests extends ApiTestBase {
 
         String responseBody = step("Make request", ()-> {
         return given(invalidTokenRequestSpec)
-               .body(userRole)
-        .when()
+                .body(userRole)
+                .when()
                 .post("/user-roles")
-        .then()
+                .then()
                 .spec(responseSpec401)
                 .extract().body().asString();
         });
@@ -71,13 +71,56 @@ public class UserRoleTests extends ApiTestBase {
         NonUniqueUserRoleResponseLombokModel response = step("Make request", ()->
                 given(userRoleRequestSpec)
                         .body(userRole)
-                .when()
+                        .when()
                         .post("/user-roles")
-                .then()
+                        .then()
                         .spec(responseSpec400)
                         .extract().as(NonUniqueUserRoleResponseLombokModel.class));
 
         step("Check response", ()->
             assertEquals("Role name attribute should be uniq for company", response.getMessage()));
     }
+
+    @Test
+    @DisplayName("Проверка успешного получения существующей роли пользователя методом GET")
+    public void successfulGetUserRoleTest() {
+        PostUserRoleResponseLombokModel response = step("Make request", ()->
+                given(userRoleRequestSpec)
+                        .when()
+                        .get("/user-roles/"+Constants.EXISTING_ROLE_ID)
+                        .then()
+                        .spec(responseSpec200)
+                        .extract().as(PostUserRoleResponseLombokModel.class));
+
+        step("Check response", ()->{
+            assertEquals("24386", response.getId());
+            assertEquals("359271", response.getCompany_id());
+            assertEquals("testRole", response.getName());
+            assertEquals("6fbd64cc-22ed-4c0b-8512-7b1c1e8cb0f3", response.getUid());
+        });
+    }
+
+    @Test
+    @DisplayName("Проверка успешного обновления существующей роли пользователя методом PATCH")
+    public void successfulUpdateUserRoleTest() {
+        PostUserRoleLombokModel userRole = new PostUserRoleLombokModel();
+        userRole.setName(Constants.USER_ROLE);
+
+        PostUserRoleResponseLombokModel response = step("Make request", ()->
+                given(userRoleRequestSpec)
+                        .body(userRole)
+                        .when()
+                        .patch("/user-roles/"+Constants.UPDATING_ROLE_ID)
+                        .then()
+                        .spec(responseSpec200)
+                        .extract().as(PostUserRoleResponseLombokModel.class));
+
+        step("Check response", ()->{
+            assertEquals("24395", response.getId());
+            assertEquals("359271", response.getCompany_id());
+            assertEquals(Constants.USER_ROLE, response.getName());
+            assertEquals("aa9c2831-1513-4fc1-b3a7-cf7db983b39b", response.getUid());
+                });
+    }
+
   }
