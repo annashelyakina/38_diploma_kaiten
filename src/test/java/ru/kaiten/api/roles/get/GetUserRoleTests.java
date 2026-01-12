@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ru.kaiten.api.ApiTestBase;
 import ru.kaiten.api.Constants;
-import ru.kaiten.api.lombok.PostUserRoleResponseLombokModel;
+import ru.kaiten.api.models.PostUserRoleResponseLombokModel;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;

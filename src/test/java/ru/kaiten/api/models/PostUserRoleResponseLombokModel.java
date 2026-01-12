@@ -1,4 +1,4 @@
-package ru.kaiten.api.lombok;
+package ru.kaiten.api.models;
 
 import lombok.Data;
 

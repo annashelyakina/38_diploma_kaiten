@@ -2,11 +2,11 @@ package ru.kaiten.api.roles.post;
 
 import ru.kaiten.api.ApiTestBase;
 import ru.kaiten.api.Constants;
-import ru.kaiten.api.lombok.*;
+import ru.kaiten.api.models.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import ru.kaiten.api.lombok.PostUserRoleLombokModel;
+import ru.kaiten.api.models.PostUserRoleLombokModel;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
