@@ -9,4 +9,11 @@ public class Constants {
     public static final String NON_UNIQUE_USER_ROLE = "testRole7";
     public static final String EXISTING_ROLE_ID = "24386";
     public static final String UPDATING_ROLE_ID = "24395";
+    public static final String MAIN_SLOGAN = "Российский сервис для управления рабочими процессами";
+    public static final String CONTACTS_TITLE = "Контакты";
+    public static final String LEAVE_REQUEST_TITLE = "Оставить заявку";
+    public static final String TASKS_TITLE ="Задачи";
+    public static final String TARIFFS_TITLE = "Тарифы";
+    public static final String TASKS_INFO = "Соберите всю информацию по задачам в карточках";
+    public static final String TARIFF_INFO = "Соберите свой идеальный тариф и платите только за то, чем пользуетесь";
  }
