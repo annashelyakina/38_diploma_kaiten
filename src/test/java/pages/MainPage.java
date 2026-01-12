@@ -1,6 +1,8 @@
 package pages;
 
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import ru.kaiten.api.Constants;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byCssSelector;
@@ -10,6 +12,20 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class MainPage {
 
+    private final SelenideElement
+
+            cookiesOkButton = $("#kw-cookies-btn"),
+            cookiesForm = $("aside.kw-cookies"),
+            logoPic = $("a.kw-logo"),
+            contentText = $(".kw-content"),
+            phoneButtonInMenu = $(".kw-menu--btn._phone"),
+            dialogCallBody = $("div.kw-dialog-call--body"),
+            dialogCallClose = $(".kw-dialog-call--close"),
+            menuArrowSvg = $("svg.kw-menu--arrow-svg"),
+            tasksTitle = $("h1.kw-s1--title.wow.fadeInUp"),
+            titleOnPage = $("h1.kw-s1--title")
+    ;
+
     @Step("Открытие сайта в браузере")
     public MainPage openPage(){
         open("");
@@ -18,79 +34,79 @@ public class MainPage {
 
     @Step("Нажатие кнопки 'Хорошо' на форме Cookie")
     public MainPage clickOkCookie(){
-        $("#kw-cookies-btn").click();
+        cookiesOkButton.click();
         return this;
     }
 
     @Step("Проверка, что форма Cookie не отображается")
     public MainPage checkHiddenCookie(){
-        $("aside.kw-cookies").shouldBe(hidden);
+        cookiesForm.shouldBe(hidden);
         return this;
     }
 
     @Step("Проверка, что логотип отображается на странице")
     public MainPage checkLogoOnPage(){
-        $("a.kw-logo").shouldBe(visible);
+        logoPic.shouldBe(visible);
         return this;
     }
 
     @Step("Проверка, что слоган отображается на странице")
     public MainPage checkSloganOnPage(){
-        $(".kw-content").shouldHave(text("Российский сервис для управления рабочими процессами"));
+        contentText.shouldHave(text(Constants.MAIN_SLOGAN));
         return this;
     }
 
     @Step("Проверка, что форма 'Оставить заявку' открыта")
     public MainPage clickLeaveRequestButton(){
-        $(".kw-menu--btn._phone").shouldBe(visible).click();
+        phoneButtonInMenu.shouldBe(visible).click();
         return this;
     }
 
     @Step("Проверка, что текст отображается на форме для заявки")
     public MainPage checkTextOnLeaveRequestDialog(){
-        $("div.kw-dialog-call--body").shouldHave(text("Оставить заявку"));
+        dialogCallBody.shouldHave(text(Constants.LEAVE_REQUEST_TITLE));
         return this;
     }
 
     @Step("Нажатие кнопки закрытия на форме для заявки")
     public MainPage closeLeaveRequestDialog(){
-        $(".kw-dialog-call--close").click();
+        dialogCallClose.click();
         return this;
     }
 
     @Step("Проверка, что форма для заявки закрыта")
     public MainPage checkHiddenLeaveRequestDialog(){
-        $("div.kw-dialog-call--body").shouldBe(hidden);
+        dialogCallBody.shouldBe(hidden);
         return this;
     }
 
     @Step("Раскрытие подменю для пункта меню 'Продукт'")
     public MainPage clickMenuItemProduct(){
-    $("svg.kw-menu--arrow-svg").hover();
+    menuArrowSvg.hover();
         return this;
     }
 
     @Step("Нажатие подпункта меню 'Задачи'")
     public MainPage clickSubMenuItemTasks(){
-    $(byText("Задачи")).click();
+    $(byText(Constants.TASKS_TITLE)).click();
         return this;
     }
 
-    @Step("Проверка, что текст о задачах отображается на странице")
+    @Step("Проверка, что информация о задачах отображается на странице")
     public MainPage checkTextTasksOnPage(){
-    $("h1.kw-s1--title.wow.fadeInUp").shouldHave(text("Соберите всю информацию по задачам в карточках"));
+    tasksTitle.shouldHave(text(Constants.TASKS_INFO));
         return this;
     }
 
     @Step("Нажатие пункта меню 'Тарифы'")
     public MainPage clickMenuItemTariff(){
-        $(byText("Тарифы")).click();
+        $(byText(Constants.TARIFFS_TITLE)).click();
         return this;
     }
 
-    @Step("Проверка, что текст о тарифах отображается на странице")
+    @Step("Проверка, что информация о тарифах отображается на странице")
     public MainPage checkTextTariffOnPage(){
-        $("h1.kw-s1--title").shouldHave(text("Соберите свой идеальный тариф и платите только за то, чем пользуетесь"));
+        titleOnPage.shouldHave(text(Constants.TARIFF_INFO));
         return this;
     }
 
@@ -99,13 +115,13 @@ public class MainPage {
         // Прокручиваем страницу до нужного элемента
         $(byCssSelector("li.sm-none")).scrollTo();
 
-        $(byText("Контакты")).click();
+        $(byText(Constants.CONTACTS_TITLE)).click();
         return this;
     }
 
     @Step("Проверка, что текст 'Контакты' отображается на странице")
     public MainPage checkTextContactsOnPage(){
-        $("h1.kw-s1--title").shouldHave(text("Контакты"));
+        titleOnPage.shouldHave(text(Constants.CONTACTS_TITLE));
         return this;
     }
 }
