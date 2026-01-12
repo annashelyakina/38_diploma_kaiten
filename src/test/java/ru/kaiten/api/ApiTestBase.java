@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 
 public class ApiTestBase {
     @BeforeAll
-    public static void beforeAll() {
+    public static void setupApiEndpoints() {
         RestAssured.baseURI = "https://annashelyakina82.kaiten.ru";
         RestAssured.basePath = "/api/latest/";
     }

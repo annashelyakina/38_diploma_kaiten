@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class WebTestBase {
     @BeforeAll
-    static void beforeAll() {
+    static void setupConfiguration() {
 
         Configuration.baseUrl = "https://kaiten.ru/";
         Configuration.browser = System.getProperty("browser", "chrome");
