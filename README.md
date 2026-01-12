@@ -80,7 +80,6 @@ gradle clean test
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> [Сборка в Jenkins](https://jenkins.autotests.cloud/job/038-Anna_Shelyakina-diploma_kaiten/)
 
-[Ссылка на сборку в Jenkins](https://jenkins.autotests.cloud/job/038-Anna_Shelyakina-diploma_kaiten/)
 
 Для запуска сборки необходимо перейти в раздел <code>Собрать с параметрами</code>, выбрать значение для таких параметров как: ENVIRONMENT, COMMENT, TASK, BROWSER, BROWSER_VERSION, BROWSER_SIZE, REMOTE. Далее нажать кнопку <code>Собрать</code>.
 <p align="center">
@@ -88,10 +87,8 @@ gradle clean test
 </p>
 После выполнения сборки, в блоке <code>История сборок</code> напротив номера сборки появятся значки <code>Allure Report</code> и <code>Allure TestOps</code>, при клике на которые откроется страница с сформированным html-отчетом и тестовой документацией соответственно.
 
-## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logo/Allure_Report.svg"> Пример Allure отчета
+## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logo/Allure_Report.svg"> [Allure отчет](https://jenkins.autotests.cloud/job/038-Anna_Shelyakina-diploma_kaiten/allure/)
 ### Overview
-
-[Ссылка на Allure отчёт](https://jenkins.autotests.cloud/job/038-Anna_Shelyakina-diploma_kaiten/allure/)
 
 <p align="center">
 <img title="Allure Report" src="media/screens/Allure.png">
@@ -113,9 +110,8 @@ gradle clean test
 <img title="Test Results in Alure TestOps" src="media/screens/AllureResults.png">
 </p>
 
-## <img width="4%" style="vertical-align:middle" title="Jira" src="media/logo/Jira.svg"> Интеграция с Jira
+## <img width="4%" style="vertical-align:middle" title="Jira" src="media/logo/Jira.svg"> [Интеграция с Jira](https://jira.autotests.cloud/browse/HOMEWORK-1538)
 
-[Ссылка на задачу в Jira](https://jira.autotests.cloud/browse/HOMEWORK-1538)
 
 Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в тикете отображается, какие тест-кейсы были связаны с задачей и результат их прогона.
 
