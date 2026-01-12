@@ -1,3 +1,5 @@
+### Здесь представлен проект автоматизированного тестирования платформы Kaiten, реализованного с применением UI и API-тестов.
+#### Немоного о самой платформе:
 <p align="center"> 
 <img width="30%" title="Kaiten" src="media/logo/logo.png">
 </p>
@@ -5,7 +7,6 @@
   [Kaiten](https://kaiten.ru/) — платформа для управления проектами и задачами, которая помогает командам работать быстрее и продуктивнее. 
 В отличие от зарубежных сервисов управления задачами и их российских аналогов, программа для управления проектами и задачами Kaiten способствует детальной визуализации всего рабочего процесса компании. Благодаря уникальной возможности расположить несколько канбан‑досок на одном рабочем пространстве, менеджеры могут одновременно управлять разными процессами и командами на одном экране.
 
-#### В данном проекте использованы UI-тесты и API-тесты. 
 
 ## :scroll: Содержание:
 
@@ -77,7 +78,7 @@ gradle clean api_tests
 gradle clean test
 ```
 
-## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> Сборка в Jenkins
+## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> [Сборка в Jenkins](https://jenkins.autotests.cloud/job/038-Anna_Shelyakina-diploma_kaiten/)
 
 [Ссылка на сборку в Jenkins](https://jenkins.autotests.cloud/job/038-Anna_Shelyakina-diploma_kaiten/)
 
