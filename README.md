@@ -81,7 +81,7 @@ gradle clean test
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> [Сборка в Jenkins](https://jenkins.autotests.cloud/job/038-Anna_Shelyakina-diploma_kaiten/)
 
 
-Для запуска сборки необходимо перейти в раздел <code>Собрать с параметрами</code>, выбрать значение для таких параметров как: ENVIRONMENT, COMMENT, TASK, BROWSER, BROWSER_VERSION, BROWSER_SIZE, REMOTE. Далее нажать кнопку <code>Собрать</code>.
+Для запуска сборки необходимо перейти в раздел <code>Собрать с параметрами</code>, выбрать значение для таких параметров как: ENVIRONMENT, COMMENT, TASK, BROWSER, BROWSER_VERSION, BROWSER_SIZE. Далее нажать кнопку <code>Собрать</code>.
 <p align="center">
 <img title="Jenkins Build" src="media/screens/Jenkins.png">
 </p>
