@@ -94,9 +94,8 @@ gradle clean test
 <img title="Allure Report" src="media/screens/Allure.png">
 </p>
 
-## <img width="4%" style="vertical-align:middle" title="Allure TestOps" src="media/logo/AllureTestOps.svg"> Интеграция с Allure TestOps
+## <img width="4%" style="vertical-align:middle" title="Allure TestOps" src="media/logo/AllureTestOps.svg"> [Интеграция с Allure TestOps](https://allure.autotests.cloud/project/5006/dashboards)
 
-[Ссылка на проект в Allure TestOps](https://allure.autotests.cloud/project/5006/dashboards)
 
 На *Dashboard* в <code>Allure TestOps</code> видна статистика по тестам: сколько ручных и автоматизированных тестов, результаты прогона при каждом запуске сборки.
 
