@@ -23,7 +23,8 @@ public class MainPage {
             dialogCallClose = $(".kw-dialog-call--close"),
             menuArrowSvg = $("svg.kw-menu--arrow-svg"),
             tasksTitle = $("h1.kw-s1--title.wow.fadeInUp"),
-            titleOnPage = $("h1.kw-s1--title")
+            titleOnPage = $("h1.kw-s1--title"),
+            footerMenu = $(byCssSelector("li.sm-none"))
     ;
 
     @Step("Открытие сайта в браузере")
@@ -112,9 +113,7 @@ public class MainPage {
 
     @Step("Нажатие пункта меню 'Контакты'")
     public MainPage clickMenuItemContacts(){
-        // Прокручиваем страницу до нужного элемента
-        $(byCssSelector("li.sm-none")).scrollTo();
-
+        footerMenu.scrollTo();         // Прокручиваем страницу до нужного элемента
         $(byText(Constants.CONTACTS_TITLE)).click();
         return this;
     }
