@@ -3,6 +3,6 @@ package ru.kaiten.api.models;
 import lombok.Data;
 
 @Data
-public class NonUniqueUserRoleResponseLombokModel {
+public class NonUniqueUserRoleResponseModel {
     String message;
 }

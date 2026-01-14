@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ru.kaiten.api.ApiTestBase;
 import ru.kaiten.api.Constants;
-import ru.kaiten.api.models.PostUserRoleLombokModel;
-import ru.kaiten.api.models.PostUserRoleResponseLombokModel;
+import ru.kaiten.api.models.PostUserRoleModel;
+import ru.kaiten.api.models.PostUserRoleResponseModel;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
@@ -20,17 +20,17 @@ public class PatchUserRoleTests extends ApiTestBase {
     @Test
     @DisplayName("Проверка успешного обновления существующей роли пользователя методом PATCH")
     public void successfulUpdateUserRoleTest() {
-        PostUserRoleLombokModel userRole = new PostUserRoleLombokModel();
+        PostUserRoleModel userRole = new PostUserRoleModel();
         userRole.setName(Constants.UPDATING_USER_ROLE);
 
-        PostUserRoleResponseLombokModel response = step("Make request", ()->
+        PostUserRoleResponseModel response = step("Make request", ()->
                 given(userRoleRequestSpec)
                         .body(userRole)
                         .when()
                         .patch("/user-roles/"+Constants.UPDATING_ROLE_ID)
                         .then()
                         .spec(responseSpec200)
-                        .extract().as(PostUserRoleResponseLombokModel.class));
+                        .extract().as(PostUserRoleResponseModel.class));
 
         step("Check response", ()->{
             assertEquals("24395", response.getId());

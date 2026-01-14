@@ -3,6 +3,6 @@ package ru.kaiten.api.models;
 import lombok.Data;
 
 @Data
-public class PostUserRoleLombokModel {
+public class PostUserRoleModel {
     String name;
 }

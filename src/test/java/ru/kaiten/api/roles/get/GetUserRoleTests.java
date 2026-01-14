@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ru.kaiten.api.ApiTestBase;
 import ru.kaiten.api.Constants;
-import ru.kaiten.api.models.PostUserRoleResponseLombokModel;
+import ru.kaiten.api.models.PostUserRoleResponseModel;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
@@ -18,13 +18,13 @@ public class GetUserRoleTests extends ApiTestBase {
     @Test
     @DisplayName("Проверка успешного получения существующей роли пользователя методом GET")
     public void successfulGetUserRoleTest() {
-        PostUserRoleResponseLombokModel response = step("Make request", ()->
+        PostUserRoleResponseModel response = step("Make request", ()->
                 given(userRoleRequestSpec)
                         .when()
                         .get("/user-roles/"+Constants.EXISTING_ROLE_ID)
                         .then()
                         .spec(responseSpec200)
-                        .extract().as(PostUserRoleResponseLombokModel.class));
+                        .extract().as(PostUserRoleResponseModel.class));
 
         step("Check response", ()->{
             assertEquals("24386", response.getId());

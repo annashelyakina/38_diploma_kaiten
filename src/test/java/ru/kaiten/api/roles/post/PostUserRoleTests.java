@@ -6,7 +6,7 @@ import ru.kaiten.api.models.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import ru.kaiten.api.models.PostUserRoleLombokModel;
+import ru.kaiten.api.models.PostUserRoleModel;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
@@ -21,17 +21,17 @@ public class PostUserRoleTests extends ApiTestBase {
     @Test
     @DisplayName("Проверка успешного создания роли пользователя методом POST")
     public void successfulCreateUserRoleTest() {
-        PostUserRoleLombokModel userRole = new PostUserRoleLombokModel();
+        PostUserRoleModel userRole = new PostUserRoleModel();
         userRole.setName(Constants.USER_ROLE);
 
-        PostUserRoleResponseLombokModel response = step("Make request", ()->
+        PostUserRoleResponseModel response = step("Make request", ()->
         given(userRoleRequestSpec)
                 .body(userRole)
                 .when()
                 .post("/user-roles")
                 .then()
                 .spec(responseSpec200)
-                .extract().as(PostUserRoleResponseLombokModel.class));
+                .extract().as(PostUserRoleResponseModel.class));
 
         step("Check response", ()->{
             assertEquals(Constants.USER_ROLE, response.getName());
@@ -44,7 +44,7 @@ public class PostUserRoleTests extends ApiTestBase {
     @Test
     @DisplayName("Проверка статус кода и сообщения об ошибке в случае невалидного токена")
     public void invalidTokenTest() {
-        PostUserRoleLombokModel userRole = new PostUserRoleLombokModel();
+        PostUserRoleModel userRole = new PostUserRoleModel();
         userRole.setName(Constants.USER_ROLE);
 
         String responseBody = step("Make request", ()-> {
@@ -65,17 +65,17 @@ public class PostUserRoleTests extends ApiTestBase {
     @Test
     @DisplayName("Проверка статус кода и сообщения об ошибке в случае неуникального названия роли пользователя")
     public void createNonUniqueUserRoleTest() {
-        PostUserRoleLombokModel userRole = new PostUserRoleLombokModel();
+        PostUserRoleModel userRole = new PostUserRoleModel();
         userRole.setName(Constants.NON_UNIQUE_USER_ROLE);
 
-        NonUniqueUserRoleResponseLombokModel response = step("Make request", ()->
+        NonUniqueUserRoleResponseModel response = step("Make request", ()->
                 given(userRoleRequestSpec)
                         .body(userRole)
                         .when()
                         .post("/user-roles")
                         .then()
                         .spec(responseSpec400)
-                        .extract().as(NonUniqueUserRoleResponseLombokModel.class));
+                        .extract().as(NonUniqueUserRoleResponseModel.class));
 
         step("Check response", ()->
             assertEquals("Role name attribute should be uniq for company", response.getMessage()));
