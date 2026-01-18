@@ -1,5 +1,6 @@
 package ru.kaiten.web.pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import ru.kaiten.api.Constants;
@@ -26,6 +27,10 @@ public class MainPage {
             titleOnPage = $("h1.kw-s1--title"),
             footerMenu = $(byCssSelector("li.sm-none")),
             supportLink = $$(".kw-contacts--sale-link").get(3)
+            ;
+
+    private final ElementsCollection
+            linksCollection =$$("a")
             ;
 
     @Step("Открытие сайта в браузере")
@@ -140,7 +145,7 @@ public class MainPage {
 
     @Step("Проверка корректности e-mail адреса для связи с поддержкой")
     public MainPage checkSupportEmail(){
-        String linkHref = $$("a").findBy(text(Constants.SUPPORT_LINK)).attr("href");
+        String linkHref = linksCollection.findBy(text(Constants.SUPPORT_LINK)).attr("href");
         assertEquals(Constants.SUPPORT_LINK_HREF, linkHref,Constants.MESSAGE);
         return this;
     }
