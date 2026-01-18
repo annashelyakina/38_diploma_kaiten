@@ -138,7 +138,7 @@ public class MainPage {
         return this;
     }
 
-    @Step("Проверка корректности e-mail адреса для связью с поддержкой")
+    @Step("Проверка корректности e-mail адреса для связи с поддержкой")
     public MainPage checkSupportEmail(){
         String linkHref = $$("a").findBy(text(Constants.SUPPORT_LINK)).attr("href");
         assertEquals(Constants.SUPPORT_LINK_HREF, linkHref,Constants.MESSAGE);
