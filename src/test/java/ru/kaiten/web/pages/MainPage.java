@@ -7,8 +7,8 @@ import ru.kaiten.api.Constants;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byCssSelector;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MainPage {
 
@@ -24,8 +24,9 @@ public class MainPage {
             menuArrowSvg = $("svg.kw-menu--arrow-svg"),
             tasksTitle = $("h1.kw-s1--title.wow.fadeInUp"),
             titleOnPage = $("h1.kw-s1--title"),
-            footerMenu = $(byCssSelector("li.sm-none"))
-    ;
+            footerMenu = $(byCssSelector("li.sm-none")),
+            supportLink = $$(".kw-contacts--sale-link").get(3)
+            ;
 
     @Step("Открытие сайта в браузере")
     public MainPage openPage(){
@@ -121,6 +122,26 @@ public class MainPage {
     @Step("Проверка, что текст 'Контакты' отображается на странице")
     public MainPage checkTextContactsOnPage(){
         titleOnPage.shouldHave(text(Constants.CONTACTS_TITLE));
+        return this;
+    }
+
+    @Step("Прокручивание страницы до заголовка 'Бухгалтерия и закрывающие документы'")
+    public MainPage scrollToAccountingTitle(){
+        $(byText(Constants.ACCOUNT_TITLE)).scrollTo();       // Прокручиваем страницу до нужного элемента
+        return this;
+    }
+
+    @Step("Проверка, что ссылка 'support@kaiten.ru' отображается на странице")
+    public MainPage checkSupportLinkOnPage(){
+        supportLink.shouldHave(text(Constants.SUPPORT_LINK));
+        supportLink.shouldBe(visible);
+        return this;
+    }
+
+    @Step("Проверка корректности e-mail адреса для связью с поддержкой")
+    public MainPage checkSupportEmail(){
+        String linkHref = $$("a").findBy(text(Constants.SUPPORT_LINK)).attr("href");
+        assertEquals(Constants.SUPPORT_LINK_HREF, linkHref,Constants.MESSAGE);
         return this;
     }
 }

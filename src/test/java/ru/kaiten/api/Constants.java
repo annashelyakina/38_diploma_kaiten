@@ -11,6 +11,10 @@ public class Constants {
     public static final String UPDATING_ROLE_ID = "24395";
     public static final String MAIN_SLOGAN = "Российский сервис для управления рабочими процессами";
     public static final String CONTACTS_TITLE = "Контакты";
+    public static final String SUPPORT_LINK = "support@kaiten.ru";
+    public static final String SUPPORT_LINK_HREF = "mailto:support@kaiten.ru";
+    public static final String MESSAGE ="Ссылка должна вести на правильный email.";
+    public static final String ACCOUNT_TITLE = "Бухгалтерия и закрывающие документы";
     public static final String LEAVE_REQUEST_TITLE = "Оставить заявку";
     public static final String TASKS_TITLE ="Задачи";
     public static final String TARIFFS_TITLE = "Тарифы";
