@@ -1,4 +1,4 @@
-package ru.kaiten.api.roles.post;
+package ru.kaiten.api.tests.post;
 
 import ru.kaiten.api.ApiTestBase;
 import ru.kaiten.api.Constants;

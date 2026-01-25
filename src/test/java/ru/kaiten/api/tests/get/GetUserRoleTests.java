@@ -1,4 +1,4 @@
-package ru.kaiten.api.roles.get;
+package ru.kaiten.api.tests.get;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
