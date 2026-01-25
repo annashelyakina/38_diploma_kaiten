@@ -1,4 +1,4 @@
-package ru.kaiten.web.tests.pages;
+package ru.kaiten.web.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
